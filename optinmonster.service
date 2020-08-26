@@ -9,8 +9,8 @@
  Environment="OPTIN_MOSTER_CALLBACK=http://localhost:5555/master"
 
  Type=simple
- WorkDirectory=/root/apps/webhook/
- ExecStart=/usr/bin/python3 /root/apps/webhook/application.py
+ WorkDirectory=/root/apps/poc-optinmonster/
+ ExecStart=/usr/bin/python3 /root/apps/poc-optinmonster/application.py
  Restart=always
 
 [Install]
