@@ -1,0 +1,17 @@
+[Unit]
+ Description=POC webhook for OptinMoster
+ After=network.target
+
+[Service]
+ Environment="HTTP_PORT=8080"
+ Environment="JWT_HOOK_TIME_EXP=5"
+ Environment="JWT_HOOK_SECRET_KEY=123456A"
+ Environment="OPTIN_MOSTER_CALLBACK=http://localhost:5555/master"
+
+ Type=simple
+ WorkDirectory=/root/apps/webhook/
+ ExecStart=/usr/bin/python3 /root/apps/webhook/application.py
+ Restart=always
+
+[Install]
+ WantedBy=multi-user.target
