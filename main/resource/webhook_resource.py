@@ -1,6 +1,6 @@
 import os
 import urllib.parse
-from flask import request, Blueprint, jsonify
+from flask import request, Blueprint
 from flask_restx import Api, Resource
 
 from main.service.token_service import create_jwt_token
@@ -40,4 +40,4 @@ class WebhookResource(Resource):
             }
         }
 
-        return jsonify(dict_result_document), 200
+        return dict_result_document, 200
