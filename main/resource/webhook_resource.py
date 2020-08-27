@@ -1,5 +1,4 @@
 import os
-import urllib.parse
 from flask import request, Blueprint
 from flask_restx import Api, Resource
 
@@ -36,7 +35,7 @@ class WebhookResource(Resource):
 
         dict_result_document = {
             'om_response_data': {
-                'redirect': urllib.parse.quote(f'{os.environ.get("OPTIN_MOSTER_CALLBACK")}?token={token_result}')
+                'redirect': f'{os.environ.get("OPTIN_MOSTER_CALLBACK")}?token={token_result}'
             }
         }
 
